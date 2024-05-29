@@ -22,12 +22,14 @@
 body{
   background-image:url("../public/Media/baner.jpg") !important;
   background-size:cover;
-  font-family: 'Poppins', sans-serif; 
+  font-family: 'Poppins', sans-serif;
+  background-position: 50%; 
 }
 
 
 .shado{
- box-shadow: 4px 4px 4px cyan;
+ /* box-shadow: 2px 1px 2px cyan; */
+ color:aqua;
 }
 
 
@@ -40,7 +42,7 @@ body{
   height: 100%;
   width: 150px;
   /* box-shadow: var(--neon-box-shadow); */
-  box-shadow: 1px 1px 4px #c012ff , -2px -2px 4px #8512ff;
+  box-shadow: 1px 1px 4px #c012ff , -1px -1px 4px #8512ff;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -66,38 +68,7 @@ body{
 
 .text:hover::before {
   width: 100%;
- 
 }
-
-/* 
-.container {
-  text-align: center;
+.card{
+  box-shadow: -1px -1px 4px #12bcff , 1px 1px 5px #12ffb4;;
 }
-
-.name {
-  display: inline-block;
-}
-
-.role {
-  display: inline-block;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes floatText {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-} */

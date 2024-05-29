@@ -13,8 +13,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" border-y-2 sticky z-[1] p-4  ">
-      <div className="container mx-auto  ">
+    <nav className=" border-y-2 all sticky z-[1] p-4  ">
+      <div className="container  mx-auto  ">
         <div className="flex items-center  ">
           {/* Hamburger icon for mobile */}
           <div className=" block md:hidden">

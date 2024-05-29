@@ -20,7 +20,7 @@ const ContactForm = () => {
     e.preventDefault();
     setState((prev) => ({ ...prev, isLoading: true }));
 
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
     setState({ values: initValue, isLoading: false });
     await sendContactForm(values);

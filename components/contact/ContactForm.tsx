@@ -20,7 +20,6 @@ const ContactForm = () => {
     e.preventDefault();
     setState((prev) => ({ ...prev, isLoading: true }));
 
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     setState({ values: initValue, isLoading: false });

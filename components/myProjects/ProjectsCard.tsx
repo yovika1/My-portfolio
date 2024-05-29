@@ -32,7 +32,7 @@ const ProjectsCard: React.FC<Props> = ({ image, title, text, url }) => {
         onAnimationComplete={() => setIsAnimate(false)}
         style={{ transformStyle: 'preserve-3d' }} 
       >
-        <div className="absolute w-full h-full backface-hidden">
+        <div className="absolute w-[300px] h-[300px] backface-hidden">
           <img
             src={image}
             alt={title}

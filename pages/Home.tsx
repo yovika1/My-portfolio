@@ -37,9 +37,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div className=" all h-[80vh] md:h-[90vh] bg-cover bg-center md:flex cursor-pointer">
+    <div className=" all h-[80vh] bg-cover bg-center md:flex cursor-pointer">
       {showParticles && <ParticleApp />}
-      <div className="flex  w-full mx-auto flex-wrap md:flex-nowrap item-center md:h-full md:w-full">
+      <div className="flex  w-full mx-auto flex-wrap md:flex-nowrap item-center">
         <div
           className={` left-0 top-10 w-full h-full transition-transform duration-1000 ${
             loaded ? "translate-x-0" : "-translate-x-full"
@@ -62,9 +62,11 @@ const Home = () => {
                     Hire ME Now
                   </button>
                 </Link>
-                <button className="text hover:bg-purple-600">
-                  Download CV
-                </button>
+                <a href="/Media/Resume-1pdf" download="My_Resume.pdf">
+                  <button className="text hover:bg-purple-600">
+                    Download CV
+                  </button>
+                </a>
               </div>
 
               <div className="flex space-x-8  mt-11  ">
@@ -85,16 +87,18 @@ const Home = () => {
           </div>
         </div>
         <div className="hidden md:block">
-          <img
-            src="/Media/image 1.png"
-            className={`.${
-              loaded ? " translate-x-0" : " translate-x-full"
-            } transition-transform duration-1000 hover:opacity-50  w-96 md:w-[50vw] `}
-            style={{
-              borderBottomLeftRadius: "50%",
-              borderTopLeftRadius: "50%",
-            }}
-          />
+          <div className="group">
+            <img
+              src="/Media/image 1.png"
+              className={`${
+                loaded ? "translate-x-0" : "translate-x-full"
+              } lg:w-[220vh] md:top-14 group-hover:animate-opacity-sequence`}
+              style={{
+                borderBottomLeftRadius: "50%",
+                borderTopLeftRadius: "50%",
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>

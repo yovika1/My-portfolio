@@ -29,26 +29,26 @@ const ContactForm = () => {
   const isFormValid = values.name && values.email && values.subject && values.message;
 
   return (
-    <section className="bg-white dark:bg-transparent box-border">
-      <div className="w-full px-4 md:px-20 md:w-[52vw] mx-auto xl:mx-48">
-        <h2 className="mb-8 w-52 text-center text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white border-2 border-y-cyan-400">
+    <section className=" dark:bg-transparent box-border  text-red-800">
+      <div className="w-full px-4 md:px-20 md:w-[52vw] mx-auto xl:mx-48 bg-emerald-transparent  ">
+        <h2 className="mb-8 w-52 text-center text-3xl tracking-tight font-extrabold  text-red-800 visible dark:text-blue-200 border-2 border-y-cyan-400">
           Contact Me
         </h2>
         <form onSubmit={onSubmit} className="space-y-5 p-6 md:py-11 border-2 border-y-cyan-400">
           <div className="flex flex-col md:flex-row md:gap-8">
             <div className="flex-1 mb-4 md:mb-0">
-              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your Name</label>
+              <label className="block mb-2 text-sm font-semibold dark:text-gray-300  ">Your Name</label>
               <input
                 type="text"
                 name="name"
                 value={values.name}
                 onChange={handleChange}
-                className="shadow-sm bg-transparent border-2 border-y-cyan-400 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:border-gray-600 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                className="shadow-sm bg-transparent border-2  text-red-800 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:border-gray-600 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                 required
               />
             </div>
             <div className="flex-1">
-              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your Email</label>
+              <label className="block mb-2 text-sm font-semibold dark:text-gray-300">Your Email</label>
               <input
                 type="email"
                 name="email"
@@ -60,7 +60,7 @@ const ContactForm = () => {
             </div>
           </div>
           <div>
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subject</label>
+            <label className="block mb-2 text-sm font-semibold text-gray-900 dark:text-gray-300">Subject</label>
             <input
               type="text"
               name="subject"
@@ -71,7 +71,7 @@ const ContactForm = () => {
             />
           </div>
           <div>
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your Message</label>
+            <label className="block mb-2 text-sm font-semibold text-gray-900 dark:text-gray-400">Your Message</label>
             <textarea
               name="message"
               value={values.message}

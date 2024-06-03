@@ -19,13 +19,13 @@ const Navbar = () => {
           {/* Hamburger icon for mobile */}
           <div className=" block md:hidden">
             <button onClick={toggleMenu} className="text-white mt-2  text-3xl ">
-              {isOpen ? (<RxCross2 className='-mt-24 text-2xl border border-cyan-400' />) : (<TbArticle />)}
+              {isOpen ? (<RxCross2 className='text-2xl border border-cyan-400' />) : (<TbArticle />)}
             </button>
          </div>
         
           {/* Navigation links */}
           <div className='  flex justify-between md:flex-row-reverse  items-center w-full'>
-          <div className={` md:flex  ${isOpen ? 'block' : 'hidden'}`}>
+          <div className={` md:flex absolute md:static top-[95%] bg-[#000000b0] left-3  ${isOpen ? 'block' : 'hidden'}`}>
             <Link href="/">
               <div className="text-white hover:text-amber-500 mr-4 p-1 hover:shadow shadow-white cursor-pointer z-20">Home</div>
             </Link>

@@ -45,15 +45,15 @@
   },
 {
   name:'MongoDB',
-  Image:'/Media/mongodb .png',
-  width:38,
-  height:38
+  Image:'/Media/mongo.jpg',
+  width:65,
+  height:65
   },
-// {
-//   name:'Power BI',
-//   Image:'/Media/power-bi-logo.jpg',
-//   width:80,
-//   height:80
-//   },
+{
+  name:'Power BI',
+  Image:'/Media/Power-bi.jpg',
+  width:80,
+  height:80
+  },
 ]
 

@@ -6,7 +6,7 @@ const About = () => {
     <div className="text-white h-[87vh] w-full md:-mx-20 flex items-center justify-center">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center w-full h-auto">
         <div className="flex justify-center">
-          <img src="/Media/cool.png" alt="none" className="w-48 h-60 md:w-60 md:h-72 rounded" data-aos="zoom-in-left" />
+          <img src="/Media/cool.png" alt="none" className="w-48 h-60 md:w-60 md:h-72 rounded flipped " data-aos="zoom-in-left" />
         </div>
         <div data-aos="zoom-in-right" className="text-center md:text-left">
           <h1 className="text-white mb-4 font-semibold text-xs md:text-sm">LET ME INTRODUCE MYSELF</h1>

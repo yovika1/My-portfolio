@@ -26,18 +26,27 @@ body{
   background-position: 50%; 
 }
 
-
-/* .shado{
- box-shadow: 2px 1px 2px cyan, -2px -1px 2px cyan;
- color:aqua;
- width: 60px;
-} */
-
+.hover:opacity-100 {
+  transition: opacity 0.3s ease-in-out;
+}
 .bg-emerald-transparent {
   background-color: rgba(188, 219, 222, 0.3); 
   padding: 50px;
 }
 
+.card {
+  /* Rest of the card styles */
+  transition: z-index 0.3s ease;
+}
+
+.flipped {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.flipped-card {
+  z-index: 9999;
+}
 
 .text {
   background: var(--hover-color);

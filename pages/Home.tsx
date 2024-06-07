@@ -62,7 +62,7 @@ const Home = () => {
                     Hire ME Now
                   </button>
                 </Link>
-                <a href="/Media/Resume-1pdf" download="My_Resume.pdf">
+                <a href="/Media/Resume-1.pdf" download="My_Resume.pdf">
                   <button className="text hover:bg-purple-600">
                     Download CV
                   </button>
@@ -71,11 +71,11 @@ const Home = () => {
 
               <div className="flex space-x-8  mt-11  ">
                 <div className="group relative">
-                  <FaGithub className="text-white  text-3xl group-hover:text-fuchsia-700 transition duration-300" />
+                  <a href="https://www.linkedin.com/in/yovika/"><FaGithub className="text-white  text-3xl group-hover:text-fuchsia-700 transition duration-300" /></a>
                   <div className="absolute  -top-1 w-full h-1 bg-fuchsia-700 blue-500 transition-all duration-300 group-hover:top-full group-hover:left-0"></div>
                 </div>
                 <div className="group relative">
-                  <FaLinkedin className="  text-white text-3xl group-hover:text-blue-800 transition duration-300" />
+                  <a href="https://github.com/dashboard"></a><FaLinkedin className="  text-white text-3xl group-hover:text-blue-800 transition duration-300" />
                   <div className="absolute -top-1 w-full h-1 bg-blue-800 transition-all duration-300 group-hover:top-full group-hover:left-0"></div>
                 </div>
                 <div className="group relative">

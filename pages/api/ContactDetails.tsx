@@ -1,6 +1,6 @@
 import {transporter } from "../../config/nodemailer";
 
-const handler= async(req,res) => {
+const handler= async(req:any,res:any) => {
     // console.log(req.body);
     if (req.method === 'POST') {
         const data = req.body;
@@ -33,7 +33,7 @@ const handler= async(req,res) => {
             console.log(error)
            return res.status(400)
             .json({
-               message:error.message
+               message:"something went wrong"
             });
         }
         

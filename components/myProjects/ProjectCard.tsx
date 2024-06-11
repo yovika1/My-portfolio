@@ -25,8 +25,8 @@ const ProjectsCard: React.FC<Props> = ({ image, title, text, url, isMobile, isFl
   return (
     <div
       onClick={handleClick}
-      
-      className={`relative w-full md:w-[300px] md:h-[200px] border-purple-600 border-2 rounded-xl cursor-pointer ${isMobile && !isFlipped ? 'hidden' : ''} data-aos="zoom-in-left"`}
+       data-aos="zoom-in-left"
+      className={`relative w-full md:w-[300px] md:h-[200px] border-purple-600 border-2 rounded-xl cursor-pointer `}
     >
       <motion.div
         className="w-full h-full -ml-24 md:ml-0 "

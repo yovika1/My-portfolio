@@ -37,15 +37,15 @@ const Home = () => {
   }, []);
 
   return (
-    <div className=" all h-[80vh] bg-cover bg-center md:flex cursor-pointer">
+    <div className=" h-[80vh] xl:h-[97vh] bg-cover bg-center md:flex cursor-pointe">
       {showParticles && <ParticleApp />}
-      <div className="flex  w-full mx-auto flex-wrap md:flex-nowrap item-center">
+      <div className="flex  w-full mx-auto flex-wrap md:flex-nowrap item-center ">
         <div
-          className={` left-0 top-10 w-full h-full transition-transform duration-1000 ${
+          className={` left-0 top-10 w-full h-full transition-transform duration-1000  ${
             loaded ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          <div className="px-8 md:ml-24 mt-14 md:mt-28 flex w-full md:h-full">
+          <div className="px-8 ml-2  mt-14 md:mt-28 flex w-full md:h-full">
             <div id="aboutMe">
               <h1 className="text-white mb-6 text-[16px]">
                 WELCOME TO MY WORLD
@@ -54,7 +54,10 @@ const Home = () => {
                 <h1 className="xl:text-[50px] lg:text-[40px] sm:text-[35px] text-[25px] font-semibold leading-3 mb-6 text-white">
                   Hi, I'M <span className="text-amber-500">Yovika</span>
                 </h1>
-                <AnimateText />
+                <div className=" md:w-[60vw] relative">
+                <AnimateText/>
+                </div>
+               
               </div>
               <div className="flex mt-6 justify-between w-80 h-8">
                 <Link href="/Contact">
@@ -71,11 +74,11 @@ const Home = () => {
 
               <div className="flex space-x-8  mt-11  ">
                 <div className="group relative">
-                  <a href="https://www.linkedin.com/in/yovika/"><FaGithub className="text-white  text-3xl group-hover:text-fuchsia-700 transition duration-300" /></a>
+                  <a href="https://github.com/dashboard"><FaGithub className="text-white  text-3xl group-hover:text-fuchsia-700 transition duration-300" /></a>
                   <div className="absolute  -top-1 w-full h-1 bg-fuchsia-700 blue-500 transition-all duration-300 group-hover:top-full group-hover:left-0"></div>
                 </div>
                 <div className="group relative">
-                  <a href="https://github.com/dashboard"></a><FaLinkedin className="  text-white text-3xl group-hover:text-blue-800 transition duration-300" />
+                  <a href="https://www.linkedin.com/in/yovika/"></a><FaLinkedin className="  text-white text-3xl group-hover:text-blue-800 transition duration-300" />
                   <div className="absolute -top-1 w-full h-1 bg-blue-800 transition-all duration-300 group-hover:top-full group-hover:left-0"></div>
                 </div>
                 <div className="group relative">
@@ -86,13 +89,13 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="hidden md:block">
+        <div className="hidden md:block absolute mt-16 xl:mt-2 ml-[44vw] ">
           <div className="group">
             <img
               src="/Media/image 1.png"
               className={`${
                 loaded ? "translate-x-0" : "translate-x-full"
-              } lg:w-[220vh] md:top-14 group-hover:animate-opacity-sequence`}
+              } lg:w-[120vh] md:w-[60vw]  group-hover:animate-opacity-sequence`}
               style={{
                 borderBottomLeftRadius: "50%",
                 borderTopLeftRadius: "50%",

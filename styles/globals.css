@@ -34,10 +34,11 @@ body{
   padding: 50px;
 }
 
-.card {
-  /* Rest of the card styles */
-  transition: z-index 0.3s ease;
+.border-line {
+  box-shadow: 2px -2px 4px #12bcff;
+  border-radius: 20%;
 }
+
 
 .flipped {
   -webkit-transform: scaleX(-1);
@@ -86,4 +87,21 @@ body{
 }
 .card{
   box-shadow: -1px -1px 4px #12bcff , 1px 1px 5px #12ffb4;;
+}
+
+.bg-whitee{
+  background-color: red !important;
+  
+}
+
+.relative {
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
 }

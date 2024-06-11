@@ -3,12 +3,12 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="text-white h-[87vh] w-full md:-mx-20 flex items-center justify-center">
+    <div className="xl:h-[97vh] border-line  text-white h-[84vh]  mt-7 w-full xl:-mx-0 flex border-b-2  border-cyan-600  ">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center w-full h-auto">
         <div className="flex justify-center">
-          <img src="/Media/cool.png" alt="none" className="w-48 h-60 md:w-60 md:h-72 rounded flipped " data-aos="zoom-in-left" />
+          <img src="/Media/cool.png" alt="none" className="w-48 h-60 md:w-60 md:h-72 rounded flipped " data-aos="zoom-in-right" />
         </div>
-        <div data-aos="zoom-in-right" className="text-center md:text-left">
+        <div data-aos="zoom-in-left" className="text-center md:text-left">
           <h1 className="text-white mb-4 font-semibold text-xs md:text-sm">LET ME INTRODUCE MYSELF</h1>
           <div>
             <h2 className="text-amber-700 text-2xl md:text-3xl font-semibold mb-4">ABOUT ME</h2>

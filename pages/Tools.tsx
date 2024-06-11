@@ -8,7 +8,8 @@ import { SkillData } from '@/Data/SkillData';
 const Tools = () => {
   return (
     <div 
-    className='mt-28 md:mt-2 h-screen w-screen flex items-center justify-center bg-cover bg-center'
+    className=' md:mt-2 h-screen xl:h-[97vh]  w-screen flex items-center justify-center bg-cover bg-center  border-cyan-600 '
+    data-aos="zoom-in-left"
     >
         <div  className='flex mt-28vh flex-col gap-20 max-w-[80%]  text-center items-center'>
             <div className='flex flex-col gap-4 items-center '>
@@ -35,7 +36,7 @@ const Tools = () => {
             modules={
                 [Autoplay]
             }
-            className='max-w-[80%]'          
+            className='max-w-[80%] '          
             >
                 {SkillData.map((item,index) =>( 
                     <SwiperSlide key={index}>

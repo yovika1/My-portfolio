@@ -32,9 +32,9 @@ const Projects = () => {
   };
 
   return (
-    <div>
+    <div className='xl:h-[97vh] border-line border-b-2 border-cyan-600 '>
       <div
-       className='font-bold text-lg flex justify-center'>MY <span className=' text-yellow-500 ml-2'>Projects</span></div>
+       className='font-bold text-lg  flex justify-center'>MY <span className=' text-yellow-500 ml-2'>Projects</span></div>
       <div
         ref={containerRef}
         className='w-screen h-screen rounded-lg flex items-center justify-center bg-center bg-cover'

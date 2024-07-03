@@ -63,15 +63,6 @@ body{
 }
 
 
-/* .flipped {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-}
-
-.flipped-card {
-  z-index: 9999;
-} */
-
 .text {
   background: var(--hover-color);
   color: var(--text-color);
@@ -113,14 +104,3 @@ body{
 
 
 
-/* .relative {
-  perspective: 1000px;
-}
-
-.backface-hidden {
-  backface-visibility: hidden;
-}
-
-.rotate-y-180 {
-  transform: rotateY(180deg);
-} */

@@ -66,7 +66,7 @@ const Home = () => {
                     Hire ME Now
                   </button>
                 </Link>
-                <a href="/Media/Resume-1.pdf" download="My_Resume.pdf">
+                <a href="/Media/My-Resume.pdf" download="My_Resume.pdf">
                   <button className="text hover:bg-purple-600">
                     Download CV
                   </button>

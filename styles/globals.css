@@ -19,12 +19,35 @@
   0 0 150px rgba(18,247,255,0.3)
 }
 
+*::-webkit-scrollbar{
+  display: none !important;
+  scrollbar-width: none !important;
+}
+
 body{
   background-image:url("https://i.ibb.co/LC9pNTZ/baner.jpg") !important;
   background-size:cover;
   font-family: 'Poppins', sans-serif;
   background-position: 50%; 
 }
+
+.animated-icon {
+  animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: tranlateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+
 
 .hover:opacity-100 {
   transition: opacity 0.3s ease-in-out;
@@ -40,14 +63,14 @@ body{
 }
 
 
-.flipped {
+/* .flipped {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
 
 .flipped-card {
   z-index: 9999;
-}
+} */
 
 .text {
   background: var(--hover-color);
@@ -57,7 +80,6 @@ body{
   transition: .6s;
   height: 100%;
   width: 150px;
-  /* box-shadow: var(--neon-box-shadow); */
   box-shadow: 1px 1px 4px #c012ff , -1px -1px 4px #8512ff;
   position: relative;
   overflow: hidden;
@@ -89,12 +111,9 @@ body{
   box-shadow: -1px -1px 4px #12bcff , 1px 1px 5px #12ffb4;;
 }
 
-.bg-whitee{
-  background-color: red !important;
-  
-}
 
-.relative {
+
+/* .relative {
   perspective: 1000px;
 }
 
@@ -104,4 +123,4 @@ body{
 
 .rotate-y-180 {
   transform: rotateY(180deg);
-}
+} */

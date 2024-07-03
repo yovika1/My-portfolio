@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ParticleApp from "../components/particles/Particles";
 import { AnimateText } from "../components/animation/Animate";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { IoIosArrowDown } from "react-icons/io";
 import { BiLogoGmail } from "react-icons/bi";
 import Link from "next/link";
 
@@ -37,11 +38,11 @@ const Home = () => {
   }, []);
 
   return (
-    <div className=" h-[80vh] xl:h-[97vh] bg-cover bg-center md:flex cursor-pointe">
+    <div className=" h-[80vh] xl:h-[97vh] mt-20  bg-cover bg-center md:flex cursor-pointe">
       {showParticles && <ParticleApp />}
-      <div className="flex  w-full mx-auto flex-wrap md:flex-nowrap item-center ">
+      <div className="flex  w-full -mx-2 flex-wrap md:flex-nowrap item-center ">
         <div
-          className={` left-0 top-10 w-full h-full transition-transform duration-1000  ${
+          className={` left-0 mt-10 w-full h-full transition-transform duration-1000  ${
             loaded ? "translate-x-0" : "-translate-x-full"
           }`}
         >
@@ -59,7 +60,7 @@ const Home = () => {
                 </div>
                
               </div>
-              <div className="flex mt-6 justify-between w-80 h-8">
+              <div className="flex mt-6 -mx-2 justify-between w-80 h-8">
                 <Link href="/Contact">
                   <button className="text hover:bg-purple-600 ">
                     Hire ME Now
@@ -89,21 +90,26 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="hidden md:block absolute mt-16 xl:mt-2 ml-[44vw] ">
+        <div className="hidden md:block absolute   ml-[64vw] ">
           <div className="group">
             <img
-              src="/Media/image 1.png"
+                src="/Media/image 1.png"
               className={`${
                 loaded ? "translate-x-0" : "translate-x-full"
-              } lg:w-[120vh] md:w-[60vw]  group-hover:animate-opacity-sequence`}
+                } lg:w-[80vh] md:w-[60vw]  group-hover:animate-opacity-sequence`}
               style={{
                 borderBottomLeftRadius: "50%",
                 borderTopLeftRadius: "50%",
-              }}
+                }}
             />
           </div>
+                <div className=" sm:visible">
+                <IoIosArrowDown className="animated-icon text-4xl  " />
+
+                </div>
         </div>
       </div>
+
     </div>
   );
 };

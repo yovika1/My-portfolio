@@ -8,10 +8,10 @@ import { SkillData } from '@/Data/SkillData';
 const Tools = () => {
   return (
     <div 
-    className=' md:mt-2 h-screen xl:h-[97vh]  w-screen flex items-center justify-center bg-cover bg-center  border-cyan-600 '
+    className=' md:-mt-6 h-screen xl:h-[97vh]  w-screen flex items-center justify-center bg-cover bg-center  border-cyan-600 '
     data-aos="zoom-in-left"
     >
-        <div  className='flex mt-28vh flex-col gap-20 max-w-[80%]  text-center items-center'>
+        <div  className='flex  flex-col gap-20 max-w-[80%]  text-center items-center'>
             <div className='flex flex-col gap-4 items-center '>
                 <h1 className=' font-semibold text-white text-2xl'>
                     Skill{' '}

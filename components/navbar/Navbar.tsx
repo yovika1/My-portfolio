@@ -16,7 +16,7 @@ const Navbar = () => {
 
    useEffect(() => {
     const handleScroll = () => {
-console.log(window.scrollY);
+console.log(window.scrollY)
 
       if (window.scrollY > 120) {
         setIsScroll(true);
@@ -34,12 +34,12 @@ console.log(window.scrollY);
   }, []);
 
   return (
-    <nav className={`border-x-2 border  sticky z-[5] p-8 md:p-10 ${isScroll? 'bg-whitee' : ' bg-transparent '} `} >
+    <nav className={`border-x-2  w-screen fixed z-[5] p-8 md:p-10 ${isScroll? 'bg-[#0000009e] ' : 'bg-red'} `} >
       <div className="container  mx-auto  ">
         <div className="flex items-center  ">
           {/* Hamburger icon for mobile */}
           <div className=" block md:hidden z-10">
-            <button onClick={toggleMenu} className="text-white text-3xl absolute top-6 cursor-pointer">
+            <button onClick={toggleMenu} className="text-white   text-3xl absolute top-6 cursor-pointer">
               {isOpen ? (<RxCross2 className='text-2xl border border-cyan-400 fixed' />) : (<TbArticle className='fixed' />)}
             </button>
          </div>

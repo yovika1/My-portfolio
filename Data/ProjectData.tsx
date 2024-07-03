@@ -1,11 +1,5 @@
 export const ProjectsData = [
-    {
-      
-      title: "Modern Apple Clone",
-      text: "Our Apple clone: indistinguishable in design, unrivaled in performance..",
-      src: "/NextWebsite.png",
-      url:'/media',
-    },
+   
     {
       
       title: "Ecommerce-site",

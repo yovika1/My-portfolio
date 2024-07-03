@@ -1,60 +1,27 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { ProjectsData } from '@/Data/ProjectData';
-import ProjectsCard from '../components/myProjects/ProjectCard';
+import ProjectCard from '../components/myProjects/ProjectCard';
 
 const Projects = () => {
-  const [visibleIndex, setVisibleIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState<any>(false);
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const value:any = containerRef.current.clientWidth <= 768 || false
-      setIsMobile(value);
-      // setIsTable(containerRef.current.clientWidth<= 1
-    };
-
-    if (containerRef.current) {
-      const resizeObserver = new ResizeObserver(() => {
-        handleResize();
-      });
-
-      resizeObserver.observe(containerRef.current);
-
-      return () => {
-        resizeObserver.disconnect();
-      };
-    }
-  }, [containerRef]);
-
-  const handleCardFlip = () => {
-    setVisibleIndex((prevIndex) => (prevIndex + 1) % ProjectsData.length);
-  };
-
   return (
-    <div className='xl:h-[97vh] border-line border-b-2 border-cyan-600 '>
-      <div
-       className='font-bold text-lg  flex justify-center'>MY <span className=' text-yellow-500 ml-2'>Projects</span></div>
-      <div
-        ref={containerRef}
-        className='w-screen h-screen rounded-lg flex items-center justify-center bg-center bg-cover'
-      >
-        <div className='md:grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[90%] max-h-[90%]'>
+    <main className='flex flex-col items-center h-[100vh] w-full bg-cover bg-center md:h-[120vh]'>
+      <div className='flex flex-col items-center w-full md:h-full mt-28 border-line border-b-2 border-cyan-600 md:my-20'>
+        <h1 className='text-lg font-bold my-11 text-white md:my-20'>
+          My <span className='text-yellow-400'>Projects</span>
+        </h1>
+        <div className='scroll-container relative h-60 gap-2 md:h-full flex overflow-x-auto scrollbar-hide w-full md:w-[81%] lg:w-[67%] whitespace-nowrap md:flex-wrap md:gap-5'>
           {ProjectsData.map((item, index) => (
-            <ProjectsCard
+            <ProjectCard
               key={index}
               title={item.title}
               text={item.text}
               image={item.src}
               url={item.url}
-              isMobile={isMobile}
-              isFlipped={isMobile && index === visibleIndex}
-              handleFlip={isMobile ? handleCardFlip : undefined}
             />
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

@@ -20,6 +20,6 @@ export const ProjectsData = [
       title: "Modern tic-tac-toe game",
       text: " Implemented a classic Tic-Tac-Toe game allowing users to play against each other.",
       src: "/Media/tic tac.jpg",
-      url:'/media',
+      url:'http://tic-tac-toe-game-yovika.vercel.app',
     },
   ];

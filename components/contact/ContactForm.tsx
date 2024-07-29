@@ -30,7 +30,7 @@ const ContactForm = () => {
 
   return (
     <section className=" dark:bg-transparent box-border  text-red-800">
-      <div className="w-full px-4 md:px-20 md:w-[52vw] mx-auto xl:mx-48 bg-emerald-transparent  ">
+      <div className="w-full px-4 md:px-20 md:w-[57vw] mx-auto xl:mx-36 bg-emerald-transparent  ">
         <h2 className="mb-8 w-52 text-center text-3xl tracking-tight font-extrabold  text-red-800 visible dark:text-blue-200 border-2 border-y-cyan-400">
           Contact Me
         </h2>

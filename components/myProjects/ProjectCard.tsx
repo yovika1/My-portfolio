@@ -25,7 +25,7 @@ const ProjectsCard: React.FC<Props> = ({ image, title, text, url }) => {
       className="relative w-full md:w-[300px] md:h-[200px] border-purple-600 border-2 rounded-xl cursor-pointer perspective-1000"
     >
       <motion.div
-        className="  w-[200px] h-[220px] md:w-full md:h-full "
+        className="  w-[200px] h-[220px] md:w-full md:h-full"
         initial={false}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         transition={{ duration: 0.6 }}
@@ -33,11 +33,11 @@ const ProjectsCard: React.FC<Props> = ({ image, title, text, url }) => {
         style={{ transformStyle: 'preserve-3d' }}
       >
         {/* Front Side */}
-        <div className=" absolute w-full h-full  backface-hidden">
+        <div className=" absolute w-full h-full backface-hidden">
           <img
             src={image}
             alt={title}
-            className=" w-full h-full object-cover rounded-lg"
+            className="h-[107%] w-full md:h-full object-cover rounded-lg"
           />
           <div className="absolute inset-0 flex items-center justify-center text-white text-[20px] opacity-0 hover:opacity-100 transition-opacity duration-300">
             Learn more &gt;
@@ -46,16 +46,15 @@ const ProjectsCard: React.FC<Props> = ({ image, title, text, url }) => {
 
         {/* Back Side */}
         <div
-          className="absolute  w-full h-full card whitespace-normal text-orange-300 rounded-lg  "
+          className="absolute  w-full h-[107%] md:h-full card whitespace-normal text-orange-300 rounded-lg  "
           style={{ transform: 'rotateY(180deg)',
              backfaceVisibility: 'hidden', 
-             backgroundColor: "rgba(241, 245, 249, 0.8)"
-
+             backgroundColor: "rgb(52 57 61 / 71%)"
             }}
         >
           <div className="flex flex-col h-full justify-center items-center text-center mx-2 ">
             <h1 className="text-xl font-semibold">{title}</h1>
-            <p className="text-[10px] mt-2">{text}</p>
+            <p className="text-[11px] md:text-[13px] mt-2">{text}</p>
             <a href={url} target="_blank" rel="noopener noreferrer" className="mt-4 text-blue-400 underline">
               Visit
             </a>

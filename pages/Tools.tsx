@@ -8,10 +8,10 @@ import { SkillData } from '@/Data/SkillData';
 const Tools = () => {
   return (
     <div 
-    className=' md:-mt-6 h-screen xl:h-[97vh]  w-screen flex items-center justify-center bg-cover bg-center  border-cyan-600 '
+    className=' md: h-screen xl:h-[97vh]  w-screen flex items-center justify-center bg-cover bg-center  border-cyan-600 '
     data-aos="zoom-in-left"
     >
-        <div  className='flex  flex-col gap-20 max-w-[80%]  text-center items-center'>
+        <div  className='flex flex-col gap-20 max-w-[80%]  text-center items-center'>
             <div className='flex flex-col gap-4 items-center '>
                 <h1 className=' font-semibold text-white text-2xl'>
                     Skill{' '}
@@ -50,34 +50,7 @@ const Tools = () => {
                     </SwiperSlide>
   ))}
                 
-            </Swiper>
-            <Swiper
-             slidesPerView={5}
-            loop={true}
-            autoplay={{
-                delay: 0,
-                disableOnInteraction:false,
-                reverseDirection:true
-            }}
-            speed={5000}
-            modules={
-                [Autoplay]
-            }
-            className='max-w-[80%]'          
-            >
-                {SkillData.map((item,index) =>( 
-                    <SwiperSlide key={index}>
-                        <Image
-                        src={item.Image}
-                        alt={item.name}
-                        width={item.width}
-                        height={item.height}
-                        />
-
-                    </SwiperSlide>
-  ))}
-                
-            </Swiper>
+                     </Swiper>
 
 
         </div>

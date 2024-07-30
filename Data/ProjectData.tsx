@@ -5,7 +5,7 @@ export const ProjectsData = [
       title: "Ecommerce-site",
       text: "Currently developing a streamlined e-commerce site using MERN Stack, featuring   product listings and a cosine similarity-based recommendation engine, along with a  robust API for library integration.",
       src: "/Media/Ecom.png",
-      url:'/media',
+      url:'/media ',
     },
     
     {

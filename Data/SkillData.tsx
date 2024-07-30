@@ -46,13 +46,13 @@
 {
   name:'MongoDB',
   Image:'/Media/mongo.jpg',
-  width:65,
-  height:65
+  width:50,
+  height:50
   },
 {
   name:'Power BI',
   Image:'/Media/Power-bi.jpg',
-  width:80,
+  width:50,
   height:80
   },
 ]

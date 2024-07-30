@@ -48,6 +48,22 @@ body{
 }
 
 
+.equal-size-image {
+  width: 100px; 
+  height: 100px;
+  object-fit: cover; 
+}
+
+@media screen and (max-width: 600px) {
+
+ .equal-size-image {
+    width: 50px;
+    height: 40px;
+ object-fit: cover;
+padding: 2px;
+  }
+  
+}
 
 .hover:opacity-100 {
   transition: opacity 0.3s ease-in-out;

@@ -45,6 +45,7 @@ const Tools = () => {
                         alt={item.name}
                         width={item.width}
                         height={item.height}
+                        className='equal-size-image'
                         />
 
                     </SwiperSlide>

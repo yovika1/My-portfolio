@@ -6,7 +6,14 @@ const About = () => {
     <div className="xl:h-[97vh]   text-white h-[110vh]   w-full xl:-mx-0 flex ">
       <div className="grid grid-cols-1 border-line md:grid-cols-2 gap-6 items-center w-full h-[96vh]  border-b-2  border-cyan-600 mt-20 ">
         <div className="flex justify-center">
-          <img src="/Media/cool.png" alt="none" className="w-48 h-60 md:w-60 md:h-72 rounded flipped " data-aos="zoom-in-right" />
+        <video 
+      src="/Media/video.mp4" 
+  className="w-48 h-60 md:w-72 md:h-72 rounded " 
+  data-aos="zoom-in-right"  
+  
+  autoPlay 
+  loop 
+/>
         </div>
         <div data-aos="zoom-in-left" className="text-center mx-4 md:text-left">
           <h1 className="text-white mb-4 font-semibold text-xs md:text-sm">LET ME INTRODUCE MYSELF</h1>

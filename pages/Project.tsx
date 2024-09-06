@@ -4,8 +4,8 @@ import ProjectCard from '../components/myProjects/ProjectCard';
 
 const Projects = () => {
   return (
-    <main className='flex flex-col items-center h-[100vh] w-full bg-cover bg-center ml-[2px] md:h-[120vh]'>
-      <div className='flex flex-col items-center w-full h-full mt-28 border-line border-b-2 border-cyan-600 md:my-20'>
+    <main className='flex flex-col items-center h-[100vh] w-full bg-cover bg-center ml-[2px] md:h-[120vh]' >
+      <div className='flex flex-col items-center w-full h-full mt-28 border-line border-b-2 border-cyan-600 md:my-20'  data-aos="zoom-in-right" >
         <h1 className='text-lg font-bold my-11 text-white md:my-20'>
           My <span className='text-yellow-400'>Projects</span>
         </h1>
@@ -13,6 +13,7 @@ const Projects = () => {
           {ProjectsData.map((item, index) => (
             <ProjectCard
               key={index}
+              
               title={item.title}
               text={item.text}
               image={item.src}

@@ -3,23 +3,30 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="xl:h-[97vh]   text-white h-[110vh]   w-full xl:-mx-0 flex ">
-      <div className="grid grid-cols-1 border-line md:grid-cols-2 gap-6 items-center w-full h-[96vh]  border-b-2  border-cyan-600 mt-20 ">
+    <div className="xl:h-[97vh] text-white h-[124vh]   w-full xl:-mx-0 flex ">
+      <div className="grid grid-cols-1 border-line md:grid-cols-2 gap-6 items-center w-full h-[114vh]  md:h-[88vh] border-b-2  border-cyan-600 mt-20 ">
         <div className="flex justify-center">
         <video 
-      src="/Media/video.mp4" 
-  className="w-48 h-60 md:w-72 md:h-72 rounded " 
-  data-aos="zoom-in-right"  
-  
+  src="/Media/about-video.mp4" 
+  className="w-48 h-72 md:w-96 md:h-96 rounded-full opacity-75" 
+  data-aos="zoom-in-right"   
   autoPlay 
   loop 
+  muted
 />
+
         </div>
         <div data-aos="zoom-in-left" className="text-center mx-4 md:text-left">
           <h1 className="text-white mb-4 font-semibold text-xs md:text-sm">LET ME INTRODUCE MYSELF</h1>
           <div>
             <h2 className="text-amber-700 text-2xl md:text-3xl font-semibold mb-4">ABOUT ME</h2>
-            <p className="text-sm md:text-lg">Passionate software developer with expertise in data analysis using Power BI certified by Microsoft. Skilled in AI, concurrent programming, and with 1 year of experience as a MERN Stack developer. Enhanced project efficiency by applying teamwork and technical skills.</p>
+            <p className="text-sm md:text-lg">Passionate Full Stack Developer with completed 1 year of internships at two different
+companies hands-on experience in MERN (MongoDB, Express.js, React, Node.js) stack
+development. Proven ability to enhance project efficiency by 30%, certified by Microsoft in
+Power BI. Skilled in AI hacks and concurrent programming, with a strong commitment to
+delivering high-quality solutions. Achieved a 20% improvement in system performance
+through optimization techniques.
+</p>
           </div>
           <Link href='/Contact'>
             <button className='p-1 text-sm md:text-base rounded-md mt-4 border-2 font-semibold font-serif  hover:bg-purple-600 text text-white'>

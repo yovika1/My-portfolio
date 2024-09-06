@@ -74,7 +74,7 @@ const Home = () => {
                   <div className="absolute -top-1 w-full h-1 bg-fuchsia-700 transition-all duration-300 group-hover:top-full group-hover:left-0"></div>
                 </div>
                 <div className="group relative">
-                  <a href="https://www.linkedin.com/in/yovika/">
+                  <a href="https://www.linkedin.com/in/yovika-rg786">
                     <FaLinkedin className="text-white text-3xl group-hover:text-blue-800 transition duration-300" />
                   </a>
                   <div className="absolute -top-1 w-full h-1 bg-blue-800 transition-all duration-300 group-hover:top-full group-hover:left-0"></div>
@@ -102,7 +102,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="sm:visible absolute inset-x-0 bottom-0 flex justify-center">
+      <div className="sm:visible absolute inset-x-0 top-[94vh] flex justify-center">
         <IoIosArrowDown className="animated-icon text-4xl" />
       </div>
     </div>

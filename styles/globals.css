@@ -22,17 +22,34 @@
 *::-webkit-scrollbar{
   display: none !important;
   scrollbar-width: none !important;
+  
 }
 
-body{
-  background-image:url("https://i.ibb.co/LC9pNTZ/baner.jpg") !important;
-  background-size:cover;
+body {
   font-family: 'Poppins', sans-serif;
-  background-position: 50%; 
+  position: relative;
+  z-index: 0; /* Ensure the pseudo-element is behind other content */
+}
+
+body::before {
+  content: "";
+  /* position: fixed; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://i.ibb.co/LC9pNTZ/baner.jpg");
+  background-size: cover;
+  background-position: 50%;
+  opacity: 0.9; /* Adjust opacity as needed */
+  z-index: -1; /* Ensure the pseudo-element is behind other content */
+  pointer-events: none; /* Ensure the pseudo-element does not interfere with user interactions */
 }
 
 .animated-icon {
   animation: bounce 1s ease-in-out infinite;
+  color: #fff;
 }
 
 @keyframes bounce {

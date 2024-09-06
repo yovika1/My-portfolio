@@ -3,8 +3,8 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="xl:h-[97vh] text-white h-[124vh]   w-full xl:-mx-0 flex ">
-      <div className="grid grid-cols-1 border-line md:grid-cols-2 gap-6 items-center w-full h-[114vh]  md:h-[88vh] border-b-2  border-cyan-600 mt-20 ">
+    <div className="xl:h-[97vh] text-white h-[100vh]   w-full xl:-mx-0 flex ">
+      <div className="grid grid-cols-1 border-line md:grid-cols-2 gap-4 items-center w-full h-[100vh]  md:h-[88vh] border-b-2  border-cyan-600 mt-20 ">
         <div className="flex justify-center">
         <video 
   src="/Media/about-video.mp4" 

@@ -10,23 +10,44 @@ const Home = () => {
   const [loaded, setLoaded] = useState(false);
   const [showParticles, setShowParticles] = useState(true);
 
-  const speakWelcomeMessage = () => {
+  const speakWelcomeMessage = (voices) => {
     const synth = window.speechSynthesis;
-    const utterance = new SpeechSynthesisUtterance("Welcome to my Portfolio. Hi, am Yovikaa.");
+    const utterance = new SpeechSynthesisUtterance("Welcome to my Portfolio. Hi, I'm Yovikaa.");
 
     utterance.pitch = 0.98;
-    utterance.rate = 1;
+    utterance.rate = 2;
     utterance.volume = 1;
 
-    let voices = synth.getVoices();
-    utterance.voice = voices.find(voice => voice.name === 'Google UK English Female') || voices[0];
+    // Find a specific voice or fallback to the first available
+    const selectedVoice = voices.find((voice) => voice.name === "Google UK English Female") || voices[0];
+    if (selectedVoice) {
+      utterance.voice = selectedVoice;
+    }
 
     synth.speak(utterance);
   };
 
   useEffect(() => {
     setLoaded(true);
-    speakWelcomeMessage(); 
+
+    const synth = window.speechSynthesis;
+
+    // Ensure voices are loaded before using them
+    const loadVoices = () => {
+      const voices = synth.getVoices();
+      if (voices.length) {
+        if (!localStorage.getItem("welcomeMessagePlayed")) {
+          speakWelcomeMessage(voices);
+          localStorage.setItem("welcomeMessagePlayed", "true");  
+        }
+      }
+    };
+
+    if (synth.onvoiceschanged !== undefined) {
+      synth.onvoiceschanged = loadVoices;
+    }
+
+    loadVoices();
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -102,24 +123,24 @@ const Home = () => {
           </div>
         </div>
         <div className="hidden md:block absolute ml-[74vw] -mt-20">
-  <div className="group">
-    <video
-      src="/Media/Myvideo.mp44"
-      autoPlay
-      loop
-      muted
-      className={`${
-        loaded ? "translate-x-0" : "translate-x-full"
-      } lg:w-[60vh]  md:w-[60vw] group-hover:animate-opacity-sequence`}
-      style={{
-        borderBottomLeftRadius: "50%",
-        borderTopLeftRadius: "50%",
-      }}
-    >
-    </video>
-  </div>
-</div>
-</div>
+          <div className="group">
+            <video
+              src="/Media/Myvideo.mp44"
+              autoPlay
+              loop
+              muted
+              className={`${
+                loaded ? "translate-x-0" : "translate-x-full"
+              } lg:w-[60vh]  md:w-[60vw] group-hover:animate-opacity-sequence`}
+              style={{
+                borderBottomLeftRadius: "50%",
+                borderTopLeftRadius: "50%",
+              }}
+            >
+            </video>
+          </div>
+        </div>
+      </div>
 
       <div className="sm:visible absolute inset-x-0 top-[94vh] flex justify-center">
         <IoIosArrowDown className="animated-icon text-4xl" />

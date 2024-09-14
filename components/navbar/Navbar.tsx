@@ -34,7 +34,7 @@ console.log(window.scrollY)
   }, []);
 
   return (
-    <nav className={`border-x-2  w-screen fixed z-[5] p-8 md:p-10 ${isScroll? 'bg-[#0000009e] ' : 'bg-red'} `} >
+    <nav className={` w-screen fixed z-[5] p-8 md:p-10 ${isScroll? 'bg-[#0000009e] ' : 'bg-red'} `} >
       <div className="container  mx-auto  ">
         <div className="flex items-center  ">
           {/* Hamburger icon for mobile */}

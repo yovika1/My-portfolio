@@ -14,6 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
   <Navbar/>
   </div>
   <Component {...pageProps} />;
+  <p className=" flex justify-center font-serif  text-xs text-orange-200"> Made By YOVIKA</p>
   </> 
    
 }

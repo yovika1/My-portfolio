@@ -72,7 +72,7 @@ const About = () => {
 
   return (
     <div className="xl:max-h-min  text-white  w-full xl:-mx-0 flex ">
-      <div className="grid grid-cols-1 border-line md:grid-cols-2 gap-4 items-center w-full mt-16  md:h-[88vh] border-b-2 border-cyan-600">
+      <div className="grid grid-cols-1 border-line  md:grid-cols-2 gap-4 items-center w-full mt-28  md:h-[88vh] border-b-2 border-cyan-600">
         
         <div className="flex justify-center">
           <video 

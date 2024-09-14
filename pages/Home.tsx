@@ -8,9 +8,10 @@ import Link from "next/link";
 
 const Home = () => {
   const [loaded, setLoaded] = useState(false);
-  const [voicePlayed, setVoicePlayed] = useState(false);
+  const [showParticles, setShowParticles] = useState(true);
+  const [voicePlayed, setVoicePlayed] = useState<boolean>(false);
 
-  const speakWelcomeMessage = (voices) => {
+  const speakWelcomeMessage = (voices: SpeechSynthesisVoice[]) => {
     const synth = window.speechSynthesis;
     const utterance = new SpeechSynthesisUtterance("Welcome to my Portfolio. Hi, I'm Yovikaa.");
 
@@ -18,43 +19,65 @@ const Home = () => {
     utterance.rate = 1;
     utterance.volume = 1;
 
-    // Choose Google UK English Female or the first available voice
     const selectedVoice = voices.find((voice) => voice.name === "Google UK English Female") || voices[0];
     if (selectedVoice) {
       utterance.voice = selectedVoice;
     }
 
-    // Speak the message
     synth.speak(utterance);
   };
 
   useEffect(() => {
-    setLoaded(true);
-    const synth = window.speechSynthesis;
+    if (typeof window === "undefined") return; 
 
-    // Function to load voices and trigger the welcome message
-    const loadVoicesAndPlayMessage = () => {
-      const voices = synth.getVoices();
-      if (voices.length && !voicePlayed) {
-        speakWelcomeMessage(voices);
-        setVoicePlayed(true);
-        localStorage.setItem("welcomeMessagePlayed", "true");
+    setLoaded(true);
+
+    // Check localStorage to determine if the voice has been played
+    const hasVoiceBeenPlayed = localStorage.getItem("voicePlayed") === "true";
+    if (!hasVoiceBeenPlayed) {
+      const synth = window.speechSynthesis;
+
+      const loadVoices = () => {
+        const voices = synth.getVoices();
+        if (voices.length) {
+          speakWelcomeMessage(voices);  
+          localStorage.setItem("voicePlayed", "true");  
+        }
+      };
+
+      if (synth.onvoiceschanged !== undefined) {
+        synth.onvoiceschanged = loadVoices;
+      } else {
+        loadVoices();
+      }
+    } else {
+      setVoicePlayed(true); 
+    }
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const aboutMeSection = document.getElementById("aboutMe");
+
+      if (aboutMeSection) {
+        const aboutMeOffsetTop = aboutMeSection.offsetTop;
+        if (scrollPosition > aboutMeOffsetTop) {
+          setShowParticles(false);
+        } else {
+          setShowParticles(true);
+        }
       }
     };
 
-    // If voices aren't loaded yet, wait for them
-    if (synth.onvoiceschanged !== undefined) {
-      synth.onvoiceschanged = loadVoicesAndPlayMessage;
-    } else {
-      // Immediately try to load voices and play the message
-      loadVoicesAndPlayMessage();
-    }
+    window.addEventListener("scroll", handleScroll);
 
-  }, [voicePlayed]);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); 
 
   return (
     <div className="h-[80vh] xl:min-h-min mt-20 bg-cover bg-center md:flex cursor-pointer">
-      <ParticleApp />
+      {showParticles && <ParticleApp />}
       <div className="flex w-full -mx-2 flex-wrap md:flex-nowrap items-center">
         <div
           className={`left-0 mt-10 w-full h-full transition-transform duration-1000 ${
@@ -118,7 +141,8 @@ const Home = () => {
                 borderBottomLeftRadius: "50%",
                 borderTopLeftRadius: "50%",
               }}
-            ></video>
+            >
+            </video>
           </div>
         </div>
       </div>

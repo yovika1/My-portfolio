@@ -33,7 +33,7 @@ const Home = () => {
     const synth = window.speechSynthesis;
 
     // Function to load voices and trigger the welcome message
-    const loadVoices = () => {
+    const loadVoicesAndPlayMessage = () => {
       const voices = synth.getVoices();
       if (voices.length && !voicePlayed) {
         speakWelcomeMessage(voices);
@@ -44,24 +44,12 @@ const Home = () => {
 
     // If voices aren't loaded yet, wait for them
     if (synth.onvoiceschanged !== undefined) {
-      synth.onvoiceschanged = loadVoices;
+      synth.onvoiceschanged = loadVoicesAndPlayMessage;
+    } else {
+      // Immediately try to load voices and play the message
+      loadVoicesAndPlayMessage();
     }
 
-    loadVoices();
-
-    // Fallback to trigger on any user click in case the voice doesn't play automatically
-    const handleUserClick = () => {
-      if (!localStorage.getItem("welcomeMessagePlayed") && !voicePlayed) {
-        loadVoices();
-      }
-    };
-
-    // Add click event listener to trigger the voice if it was blocked initially
-    window.addEventListener("click", handleUserClick);
-
-    return () => {
-      window.removeEventListener("click", handleUserClick);
-    };
   }, [voicePlayed]);
 
   return (
@@ -137,7 +125,7 @@ const Home = () => {
 
       <div className="sm:visible absolute inset-x-0 top-[94vh] flex justify-center">
         <IoIosArrowDown className="animated-icon text-4xl" />
-      </div>5
+      </div>
     </div>
   );
 };

@@ -8,71 +8,65 @@ import Link from "next/link";
 
 const Home = () => {
   const [loaded, setLoaded] = useState(false);
-  const [showParticles, setShowParticles] = useState(true);
+  const [voicePlayed, setVoicePlayed] = useState(false);
 
   const speakWelcomeMessage = (voices) => {
     const synth = window.speechSynthesis;
     const utterance = new SpeechSynthesisUtterance("Welcome to my Portfolio. Hi, I'm Yovikaa.");
 
     utterance.pitch = 0.98;
-    utterance.rate = 2;
+    utterance.rate = 1;
     utterance.volume = 1;
 
-    // Find a specific voice or fallback to the first available
+    // Choose Google UK English Female or the first available voice
     const selectedVoice = voices.find((voice) => voice.name === "Google UK English Female") || voices[0];
     if (selectedVoice) {
       utterance.voice = selectedVoice;
     }
 
+    // Speak the message
     synth.speak(utterance);
   };
 
   useEffect(() => {
     setLoaded(true);
-
     const synth = window.speechSynthesis;
 
-    // Ensure voices are loaded before using them
+    // Function to load voices and trigger the welcome message
     const loadVoices = () => {
       const voices = synth.getVoices();
-      if (voices.length) {
-        if (!localStorage.getItem("welcomeMessagePlayed")) {
-          speakWelcomeMessage(voices);
-          localStorage.setItem("welcomeMessagePlayed", "true");  
-        }
+      if (voices.length && !voicePlayed) {
+        speakWelcomeMessage(voices);
+        setVoicePlayed(true);
+        localStorage.setItem("welcomeMessagePlayed", "true");
       }
     };
 
+    // If voices aren't loaded yet, wait for them
     if (synth.onvoiceschanged !== undefined) {
       synth.onvoiceschanged = loadVoices;
     }
 
     loadVoices();
 
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const aboutMeSection = document.getElementById("aboutMe");
-
-      if (aboutMeSection) {
-        const aboutMeOffsetTop = aboutMeSection.offsetTop;
-        if (scrollPosition > aboutMeOffsetTop) {
-          setShowParticles(false);
-        } else {
-          setShowParticles(true);
-        }
+    // Fallback to trigger on any user click in case the voice doesn't play automatically
+    const handleUserClick = () => {
+      if (!localStorage.getItem("welcomeMessagePlayed") && !voicePlayed) {
+        loadVoices();
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Add click event listener to trigger the voice if it was blocked initially
+    window.addEventListener("click", handleUserClick);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("click", handleUserClick);
     };
-  }, []);
+  }, [voicePlayed]);
 
   return (
     <div className="h-[80vh] xl:min-h-min mt-20 bg-cover bg-center md:flex cursor-pointer">
-      {showParticles && <ParticleApp />}
+      <ParticleApp />
       <div className="flex w-full -mx-2 flex-wrap md:flex-nowrap items-center">
         <div
           className={`left-0 mt-10 w-full h-full transition-transform duration-1000 ${
@@ -114,7 +108,7 @@ const Home = () => {
                 </div>
                 <div className="group relative">
                   <a href="https://mail.google.com/mail/u/1/#inbox?compose=GTvVlcRzBlQczclRHdgsGdjRHbJMJcqqQFmVcQgCVKvRbMVmvRRdlHkcRwQNgqDXdNHHWdvlFPPDz">
-                  <BiLogoGmail className="text-white -mt-1 text-4xl group-hover:text-red-600 transition duration-300" />
+                    <BiLogoGmail className="text-white -mt-1 text-4xl group-hover:text-red-600 transition duration-300" />
                   </a>
                   <div className="absolute -top-1 w-full h-1 bg-red-600 transition-all duration-300 group-hover:top-full group-hover:left-0"></div>
                 </div>
@@ -136,15 +130,14 @@ const Home = () => {
                 borderBottomLeftRadius: "50%",
                 borderTopLeftRadius: "50%",
               }}
-            >
-            </video>
+            ></video>
           </div>
         </div>
       </div>
 
       <div className="sm:visible absolute inset-x-0 top-[94vh] flex justify-center">
         <IoIosArrowDown className="animated-icon text-4xl" />
-      </div>
+      </div>5
     </div>
   );
 };

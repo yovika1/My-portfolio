@@ -19,14 +19,14 @@ const Home = () => {
 
   const speakWelcomeMessage = () => {
     if (window.responsiveVoice) {
-      console.log("ResponsiveVoice is available"); // Add this line
+      console.log("ResponsiveVoice is available"); 
       window.responsiveVoice.speak(
         "Welcome to my Portfolio. Hi, I'm Yovikaa.", 
         "UK English Female", 
         { pitch: 0.98, rate: 1, volume: 1 }
       );
     } else {
-      console.log("ResponsiveVoice is not available"); // Add this line
+      console.log("ResponsiveVoice is not available"); 
     }
   };
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineLoading } from 'react-icons/ai';
-import {sendContactForm} from '../lib/Api'
+import axios from 'axios';
 
 const initValue = { name: '', email: '', subject: '', message: '' };
 
@@ -8,7 +8,7 @@ const ContactForm = () => {
   const [state, setState] = useState({ values: initValue, isLoading: false });
   const { values, isLoading } = state;
 
-  const handleChange = (e:any) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setState((prev) => ({
       ...prev,
@@ -16,34 +16,48 @@ const ContactForm = () => {
     }));
   };
 
-  const onSubmit = async (e:any) => {
+  const sendContactForm = async (data: any) => {
+    try {
+      await axios.post('/api/ContactDetails', data, {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      });
+    } catch (error) {
+      console.error('Error sending contact form:', error);
+    }
+  };
+
+  const onSubmit = async (e: any) => {
     e.preventDefault();
     setState((prev) => ({ ...prev, isLoading: true }));
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1000)); 
 
-    setState({ values: initValue, isLoading: false });
-    await sendContactForm(values);
+    await sendContactForm(values); 
+
+    setState({ values: initValue, isLoading: false }); 
   };
 
   const isFormValid = values.name && values.email && values.subject && values.message;
 
   return (
-    <section className=" dark:bg-transparent box-border  text-red-800">
-      <div className="w-full px-4 md:px-20 md:w-[57vw] mx-auto xl:mx-36 bg-emerald-transparent  ">
-        <h2 className="mb-8 w-52 text-center text-3xl tracking-tight font-extrabold  text-red-800 visible dark:text-blue-200 border-2 border-y-cyan-400">
+    <section className="dark:bg-transparent box-border text-red-800">
+      <div className="w-full px-4 md:px-20 md:w-[57vw] mx-auto xl:mx-36 bg-emerald-transparent">
+        <h2 className="mb-8 w-52 text-center text-3xl tracking-tight font-extrabold text-red-800 visible dark:text-blue-200 border-2 border-y-cyan-400">
           Contact Me
         </h2>
         <form onSubmit={onSubmit} className="space-y-5 p-6 md:py-11 border-2 border-y-cyan-400">
           <div className="flex flex-col md:flex-row md:gap-8">
             <div className="flex-1 mb-4 md:mb-0">
-              <label className="block mb-2 text-sm font-semibold dark:text-gray-300  ">Your Name</label>
+              <label className="block mb-2 text-sm font-semibold dark:text-gray-300">Your Name</label>
               <input
                 type="text"
                 name="name"
                 value={values.name}
                 onChange={handleChange}
-                className="shadow-sm bg-transparent border-2  text-red-800 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:border-gray-600 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                className="shadow-sm bg-transparent border-2 text-red-800 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:border-gray-600 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                 required
               />
             </div>

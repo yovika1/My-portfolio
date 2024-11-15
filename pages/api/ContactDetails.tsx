@@ -13,8 +13,8 @@ const handler= async(req:any,res:any) => {
         }
         try {
             await transporter.sendMail({
-                from: 'Porfilio',
-                to: data.email,
+                from: 'Portfolio',
+                to: process.env.EMAIL,
                 subject: "Hello ✔", 
                 text: "Contact", 
                 html: `<div>

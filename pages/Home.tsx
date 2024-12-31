@@ -146,8 +146,8 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="sm:visible absolute inset-x-0 top-[94vh] flex justify-center">
-          <IoIosArrowDown className="animated-icon text-4xl" />
+        <div className="sm:visible absolute inset-x-0 top-[88vh] flex justify-center">
+          <IoIosArrowDown className="animated-icon text-4xl"/>
         </div>
       </div>
     </>

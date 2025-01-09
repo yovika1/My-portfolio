@@ -99,7 +99,7 @@ const Home = () => {
                   <Link href="/Contact">
                     <button className="text hover:bg-purple-600">Hire ME Now</button>
                   </Link>
-                  <a href="/Media/My-Resume.pdf" download="My_Resume.pdf">
+                  <a href="/Media/Yovika-Resume.pdf" download="My_Resume.pdf">
                     <button className="text hover:bg-purple-600">Download CV</button>
                   </a>
                 </div>
